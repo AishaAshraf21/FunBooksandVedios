@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "SpeProduct";
+}
+
+<div class=" container mb-5">
+    <div class="row justify-content-center">
+
+        <div class="col-sm-6 col-lg-6 m-4">
+            <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
+                <div class="view view-cascade mt-2 overlay text-center">
+                    <img class="card-img-top" id="pimage" src="@Session["url"]" alt=""> <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a><div class="card-body card-body-cascade text-center">
+                        <h4 class="card-title"><strong><a href="" id="pname">@Session["name"]</a></strong></h4>
+                        <p class="card-text" id="aname">@Session["auth"] </p>
+                        <p class="price"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (Session["role"] != null)
+    {
+        if (Session["role"].ToString() == "paid")
+        {
+            <a name="" id="" class="btn btn-primary" onclick="showadd()" role="button">Order A copy for Home</a>
+
+        }
+    }
+</div>
+
+<input type="text" hidden
+       class="form-control" name="" id="loginid" value="@Session["User"]" aria-describedby="helpId" placeholder="">
+
+
+
+<div class="m-5 p-5" id="address" style="display:none;">
+    <div class="row">
+        <div class="col-4">
+            <span>Country</span> <input class="form-control" type="text" id="country" placeholder="Address" />
+        </div>
+        <div class="col-4">
+            <span>City</span> <input class="form-control" type="text" id="city" placeholder="Address" />
+        </div>
+        <div class="col-4 mb-5">
+            <span>Street Address</span> <input class="form-control" type="text" id="adress" placeholder="Address" />
+        </div>
+
+        <div class="col-4">
+            <button type="button" id="pdf" onclick="pdf()" class="btn btn-primary">Generate Purchase Order</button>
+        </div>
+    </div>
+</div>
+
